@@ -1,13 +1,10 @@
 function filter(arr, callback) {
-  let filtered = [];
-
-  for (let idx = 0; idx < arr.length; idx += 1) {
-    if (callback(arr[idx])) {
-      filtered.push(arr[idx]);
+  return arr.reduce((accum, elem) => {
+    if (callback(elem)) {
+      accum.push(elem);
     }
-  }
-
-  return filtered;
+    return accum;
+  }, []);
 }
 
 let numbers = [1, 2, 3, 4, 5];
