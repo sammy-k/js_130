@@ -1,9 +1,14 @@
-function encryptRot13(str) {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-  str.split.map(letter => {
-    
-  })
+function encryptRot13(name) {
+  function rot13(str) {
+    return str.replace(/[A-Za-z]/g, (char) => {
+      const start = char <= "Z" ? 65 : 97;
+      return String.fromCharCode(((char.charCodeAt(0) - start + 13) % 26) + start);
+    });
+  }
+
+  return rot13(name);
 }
+
 
 console.log(encryptRot13('Nqn Ybirynpr'));
 console.log(encryptRot13('Tenpr Ubccre'));
